@@ -1,0 +1,27 @@
+public class Task3 {
+
+    public static void main(String[] args) {
+        int[] numbers = {2001, 1986, 1998, 2000, 1999};
+
+        System.out.println("Finding the maximum number with recursion.");
+
+        int max = findMaxRecursive(numbers, 0);
+
+        System.out.println("The maximum number is: " + max);
+    }
+
+        public static int findMaxRecursive(int[] nums, int index) {
+
+        if (index == nums.length - 1) {
+            return nums[index];
+        }
+
+        int maxOfRest = findMaxRecursive(nums, index + 1);
+
+            if (nums[index] > maxOfRest) {
+                return nums[index];
+            } else {
+                return maxOfRest;
+            }
+    }
+}
